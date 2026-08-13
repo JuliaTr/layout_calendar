@@ -1,7 +1,10 @@
 @use './utils/visually-hidden.scss';
+@use 'sass:math';
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .calendar__day {
@@ -17,8 +20,18 @@ body {
   visibility: hidden;
 }
 
-@for $day from 29 through 1 {
-  .calendar__body:last-child::before {
+@for $day from 1 through 31 {
+  $position: $day + 6;
+  $row: math.ceil($position / 7);
+  $column: $position % 7;
+
+  @if $column == 0 {
+    $column: 7;
+  }
+
+  .calendar__row:nth-child(#{$row}) .calendar__day:nth-child(#{$column})::before {
+    content: "#{$day}";
+    display: block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
   }
