@@ -1,3 +1,25 @@
+@use './utils/visually-hidden.scss';
+
 body {
   margin: 0;
+}
+
+.calendar__day {
+  box-sizing: border-box;
+
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+  border: 1px solid #000;
+}
+
+.calendar__day--empty {
+  visibility: hidden;
+}
+
+@for $day from 29 through 1 {
+  .calendar__body:last-child::before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+  }
 }
