@@ -8,6 +8,9 @@ $paddings-total: $white-space * 2;
 $width: calc(
   $number-of-days * $day-width + $number-of-gaps-total + $paddings-total
 );
+$min-day-number: 1;
+$max-day-number: 31;
+$min-month-days: 28;
 $week-days: (
   'mon': 0,
   'tue': 1,
