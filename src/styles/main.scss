@@ -66,9 +66,8 @@ body {
   }
 }
 
-// @for $month-length from 28 through 31 {
-//   .calendar__day:nth-child(#{$month-length}) {
-//     background-color: #eee;
-//     border: 1px solid #000;
-//   }
-// }
+@for $month-length from 28 through 31 {
+  .calendar--month-length-#{$month-length} .calendar__day:nth-child(n + #{$month-length + 1}) {
+    visibility: hidden;
+  }
+}
