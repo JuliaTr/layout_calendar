@@ -53,7 +53,7 @@
   {
     &--month-length-#{$month-length} {
       .calendar__day:nth-child(n + #{$month-length + 1}) {
-        visibility: hidden;
+        display: none;
       }
     }
   }
