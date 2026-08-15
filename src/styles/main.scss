@@ -49,6 +49,14 @@ body {
   height: 100px;
   background-color: #eee;
   border: 1px solid #000;
+
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.calendar__day:hover {
+  background-color: #FFBFCB;
+  transform: translateY(-20px);
 }
 
 @for $day from 1 through 31 {
