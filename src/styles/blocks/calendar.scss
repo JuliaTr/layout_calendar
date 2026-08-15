@@ -47,7 +47,10 @@
     }
   }
 
-  @for $month-length from variables.$min-month-days through variables.$max-day-number {
+  @for $month-length
+    from variables.$min-month-days
+    through variables.$max-day-number
+  {
     &--month-length-#{$month-length} {
       .calendar__day:nth-child(n + #{$month-length + 1}) {
         visibility: hidden;
